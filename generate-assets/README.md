@@ -63,8 +63,8 @@ The generated images will be saved locally. You can also continue the generation
 
 ### Conclusion
 
-- Time to generate 50 Midjourney /imagine generations:
-- Used Fast GPU:
+- Time to generate 50 Midjourney /imagine generations: **~19 mins**
+- Used Fast GPU: **~27 mins**
 
 Visit our [Discord Server](https://discord.gg/w28uK3cnmF) for any support questions and concerns. 
 

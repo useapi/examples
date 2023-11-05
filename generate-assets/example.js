@@ -162,8 +162,7 @@ const main = async () => {
                                 // Wait for 10 seconds before trying again
                                 await sleep(10 * 1000);
                             } else {
-                                const body = await response.body();
-                                console.error(`Unexpected result.status`, { status: result.status, body });
+                                console.error(`Unexpected response.status`, result);
                                 retry = false;
                             }
                         break;
