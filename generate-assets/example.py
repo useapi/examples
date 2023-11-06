@@ -47,6 +47,8 @@ def main():
     discord = os.getenv('USEAPI_DISCORD')
     server = os.getenv('USEAPI_SERVER')
     channel = os.getenv('USEAPI_CHANNEL')
+    # You can use https://webhook.site if you want to receive results via callback.
+    replyUrl = None
 
     prompts = loadFromFile('./prompts.json')
 
@@ -71,7 +73,8 @@ def main():
                 'server': server,
                 'channel': channel,
                 # We will utilize all three available job slots for the Basic or Standard plan.
-                'maxJobs': 3
+                'maxJobs': 3,
+                'replyUrl': f"{replyUrl}?ind={ind}" if replyUrl is not None else None
             })
         }
 

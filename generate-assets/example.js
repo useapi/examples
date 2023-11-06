@@ -15,6 +15,8 @@ const { finished } = require('stream/promises');
 const inputFileName = './prompts.json';
 // We will utilize all three available job slots for the Basic or Standard plan.
 const maxJobs = 3;
+// You can use https://webhook.site if you want to receive results via callback.
+const replyUrl = undefined;
 
 const sleep = (ms = 0) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -80,8 +82,16 @@ const main = async () => {
             }
         };
 
-        // Detailed documentation at https://useapi.net/docs/api-v1/jobs-imagine
-        data.body = JSON.stringify({ prompt, discord, server, channel, maxJobs });
+        // Detailed documentation at https://useapi.net/docs/api-v1/jobs-imagine        
+        data.body = JSON.stringify({
+            prompt,
+            discord,
+            server,
+            channel,
+            maxJobs,
+            replyUrl: replyUrl ? `${replyUrl}?ind=${ind}` : undefined
+        });
+
 
         console.log(`${dateAsString()} ⁝ #${ind} prompt`, prompt);
 
