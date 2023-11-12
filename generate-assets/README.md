@@ -4,9 +4,11 @@
 
 If you are a designer, a game developer, or simply experimenting with [Midjourney](https://midjourney.com) and want to create a large number of [/imagine](https://docs.midjourney.com/docs/quick-start#5-use-the-imagine-command) generations based on your ideas, it may be very tedious and time-consuming to do so manually.
 
-In this article, we will explore methods to efficiently execute such tasks with minimal effort. We will also attempt to measure the time it takes to generate 50 Midjourney /imagine generations and compare it with the time reported by Midjourney for their Fast GPU.
+In this article, we will explore methods to efficiently execute such tasks with minimal effort.   
 
-Please check a [YouTube video]() covering this article.
+We will also attempt to measure the time it takes to generate 50 Midjourney /imagine generations and compare it with the time reported by Midjourney for their Fast GPU.
+
+Please check a [YouTube video](https://youtu.be/SIiPnTJ9SHU) covering this article.
 
 ### Setup 
 
@@ -59,13 +61,13 @@ USEAPI_TOKEN="useapi API token" USEAPI_SERVER="Discord server" USEAPI_CHANNEL="D
 USEAPI_TOKEN="useapi API token" USEAPI_SERVER="Discord server" USEAPI_CHANNEL="Discord channel" USEAPI_DISCORD="Discord token" python3 ./example.py
 ```
 
-Execute it from the command line like this: `./example.sh` and observe the magic of the API. We have created a [YouTube video]() covering this entire process.
+Execute it from the command line like this: `./example.sh` and observe the magic of the API. We have created a [YouTube video](https://youtu.be/SIiPnTJ9SHU) covering this entire process.
 
 The generated images will be saved locally. You can continue the generation process in a Discord channel to refine your desired creations, or you can use the [jobs/button](https://useapi.net/docs/api-v1/jobs-button) to automate it, following the same process as demonstrated above.
 
 ### Conclusion
 
-As shown in the [YouTube video](), you can observe the following:
+As shown in the [YouTube video](https://youtu.be/SIiPnTJ9SHU), you can observe the following:
 - Time to generate 50 Midjourney /imagine creations using the Midjourney API: ~**19** minutes
 - Utilization of the Midjourney Fast GPU: ~**26** minutes
 
