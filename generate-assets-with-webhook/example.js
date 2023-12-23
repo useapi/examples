@@ -30,7 +30,7 @@ const inputFileName = './prompts.json';
 // We will utilize all three available job slots for the Basic or Standard plan.
 const maxJobs = 3;
 // Provide additional prompt params
-const withParams = ' --relax'; // --fast or --relax
+const withParams = ' --relax --s 750'; // --fast, --relax, --s all goes here
 // Time to pause between Discord 429 calls
 const sleepSecs = 5;
 // API root url
@@ -93,7 +93,7 @@ http
                     const { prompt, status, replyRef, jobid, content, error, errorDetails, attachments } = job;
                     const url = attachments?.at(0)?.url;
 
-                    console.log(`${dateAsString()} ⁝ webhook #${replyRef} ${jobid} ${status}`, content.substring(0, 15) + '…' + content.substring(content.length - 15));
+                    console.log(`${dateAsString()} ⁝ webhook #${replyRef} ${jobid} ${status}`, content.substring(0, 20) + '…' + content.substring(content.length - 20));
 
                     results[replyRef] = { prompt, status, replyRef, jobid, content, error, errorDetails, url };
 
