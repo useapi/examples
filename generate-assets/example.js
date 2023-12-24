@@ -15,8 +15,14 @@ const { finished } = require('stream/promises');
 const inputFileName = './prompts.json';
 // We will utilize all three available job slots for the Basic or Standard plan.
 const maxJobs = 3;
-// You can use https://webhook.site if you want to receive results via callback.
+// You can use https://webhook.site or https://ngrok.com if you want to receive results via callback.
 const replyUrl = undefined;
+// Provide additional prompt params
+const withParams = ' --relax'; // --fast or --relax
+// Time to pause between calls
+const sleepSecs = 5;
+// API root url
+const rootUrl = 'https://api.useapi.net/v2';
 
 const sleep = (ms = 0) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -32,7 +38,6 @@ const loadFromFile = async (filePath) => {
     else
         throw new Error('Unable to load file:', filePath);
 }
-
 
 const saveToFile = async (filePath, data) => {
     await fs.writeFile(filePath, JSON.stringify(data, null, 2), (err) => {
@@ -71,7 +76,8 @@ const main = async () => {
 
     const startTime = performance.now();
 
-    for (const prompt of prompts) {
+    for (const _prompt of prompts) {
+        const prompt = `${_prompt} ${withParams}`.trim();
         ind++;
 
         const data = {
@@ -82,7 +88,7 @@ const main = async () => {
             }
         };
 
-        // Detailed documentation at https://useapi.net/docs/api-v1/jobs-imagine        
+        // Detailed documentation at https://useapi.net/docs/api-v2/post-jobs-imagine        
         data.body = JSON.stringify({
             prompt,
             discord,
@@ -101,7 +107,7 @@ const main = async () => {
         do {
             attempt++;
 
-            const apiUrl = "https://api.useapi.net/v1/jobs/imagine";
+            const apiUrl = `${rootUrl}/jobs/imagine`;
             const response = await fetch(apiUrl, data);
             const result = await response.json();
 
@@ -109,9 +115,8 @@ const main = async () => {
 
             switch (response.status) {
                 case 429: // Query is full
-                    console.log(`${dateAsString()} ⁝ #${ind} attempt #${attempt} sleeping for 10secs...`);
-                    // Wait for 10 seconds before trying again
-                    await sleep(10 * 1000);
+                    console.log(`${dateAsString()} ⁝ #${ind} attempt #${attempt} sleeping for ${sleepSecs} secs...`);
+                    await sleep(sleepSecs * 1000);
                     break;
                 case 200: // OK
                 case 422: // Moderated
@@ -147,7 +152,7 @@ const main = async () => {
             do {
                 attempt++;
 
-                const apiUrl = `https://api.useapi.net/v1/jobs/?jobid=${jobid}`;
+                const apiUrl = `${rootUrl}/jobs/?jobid=${jobid}`;
                 const response = await fetch(apiUrl, {
                     headers: {
                         "Authorization": `Bearer ${token}`,
@@ -168,9 +173,8 @@ const main = async () => {
                             retry = false;
                         } else
                             if (result.status == 'started' || result.status == 'progress') {
-                                console.log(`${dateAsString()} ⁝ #${ind} attempt #${attempt} sleeping for 10secs...`, result.status);
-                                // Wait for 10 seconds before trying again
-                                await sleep(10 * 1000);
+                                console.log(`${dateAsString()} ⁝ #${ind} attempt #${attempt} sleeping for ${sleepSecs} secs...`, result.status);
+                                await sleep(sleepSecs * 1000);
                             } else {
                                 console.error(`Unexpected response.status`, result);
                                 retry = false;

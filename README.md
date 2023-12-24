@@ -1,6 +1,7 @@
 This repository contains examples of how to use the Midjourney API provided by [useapi.net](https://useapi.net) to interact with Midjourney.
 
 * [Automating Asset Generation with the Midjourney API](https://github.com/useapi/examples/blob/main/generate-assets/README.md)
+* [Automating Asset Generation with the Midjourney API (using webhook)](https://github.com/useapi/examples/blob/main/generate-assets-with-webhooks/README.md)
 
 Visit our [Discord Server](https://discord.gg/w28uK3cnmF) for any support questions and concerns. 
 

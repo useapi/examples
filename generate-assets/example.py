@@ -85,7 +85,7 @@ def main():
 
         while retry:
             attempt += 1
-            response = requests.post("https://api.useapi.net/v1/jobs/imagine", headers=data['headers'], data=data['body'])
+            response = requests.post("https://api.useapi.net/v2/jobs/imagine", headers=data['headers'], data=data['body'])
             result = response.json()
 
             print(f"{dateAsString()} ⁝ attempt #{attempt}, response: {{ status: {response.status_code}, jobid: {result.get('jobid')}, job_status: {result.get('status')} }}")
@@ -121,7 +121,7 @@ def main():
             
             while retry:
                 attempt += 1
-                response = requests.get(f"https://api.useapi.net/v1/jobs/?jobid={jobid}", headers={"Authorization": f"Bearer {token}"})
+                response = requests.get(f"https://api.useapi.net/v2/jobs/?jobid={jobid}", headers={"Authorization": f"Bearer {token}"})
                 result = response.json()
 
                 print(f"{dateAsString()} ⁝ attempt #{attempt}, response: {{ status: {response.status_code}, jobid: {result.get('jobid')}, job_status: {result.get('status')} }}")

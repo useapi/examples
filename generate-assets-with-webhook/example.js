@@ -90,14 +90,14 @@ http
                 req.on('data', chunk => body += chunk.toString());
                 req.on('end', () => {
                     const job = JSON.parse(body);
-                    const { prompt, status, replyRef, jobid, content, error, errorDetails, attachments } = job;
+                    const { status, replyRef, jobid, content, attachments } = job;
                     const url = attachments?.at(0)?.url;
 
                     console.log(`${dateAsString()} ⁝ webhook #${replyRef} ${jobid} ${status}`, content.substring(0, 20) + '…' + content.substring(content.length - 20));
 
-                    results[replyRef] = { prompt, status, replyRef, jobid, content, error, errorDetails, url };
+                    results[replyRef] = job;
 
-                    // Update number of running jobs
+                    // If job completed we can start another one
                     switch (status) {
                         case 'completed':
                         case 'moderated':
@@ -149,11 +149,11 @@ const submit = async () => {
 
         const response = await fetch(apiUrl, data);
 
-        const result = await response.json();
+        const job = await response.json();
 
-        const { prompt, status, jobid, content, error, errorDetails, executingJobs } = result;
+        const { status, jobid, executingJobs } = job;
 
-        console.log(`${dateAsString()} ⁝ response #${prompt_ind} HTTP ${response.status}`, { status, jobid, prompt_ind, executingJobs });
+        console.log(`${dateAsString()} ⁝ response #${prompt_ind} HTTP ${response.status}`, { status, jobid, executingJobs });
 
         switch (response.status) {
             case 429:
@@ -166,11 +166,11 @@ const submit = async () => {
                 break;
             case 200: // OK
             case 422: // Moderated                    
-                results[replyRef] = { prompt, status, jobid, content, error, errorDetails };
+                results[replyRef] = job;
                 prompt_ind++;
                 break;
             default:
-                console.error(`Unexpected response.status`, result);
+                console.error(`Unexpected response.status`, job);
                 prompt_ind++;
                 break;
         }

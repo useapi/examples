@@ -23,7 +23,7 @@ Follow these [simple steps](https://useapi.net/docs/start-here) to obtain the fo
 - Discord token, referred to in this article as `discord`. [Verify Discord access](https://useapi.net/docs/start-here/setup-midjourney#verify-discord-access).
 - [useapi.net](https://useapi.net) API token, referred to in this article as `token`. [Verify useapi.net API access](https://useapi.net/docs/start-here/setup-useapi#verify-useapinet-api-access).
 
-Useapi.net provides an easy way to experiment with all API endpoints without writing any code. Check the `Try It` section at the end of each document page, such as [jobs/imagine](https://useapi.net/docs/api-v1/jobs-imagine#try-it).
+Useapi.net provides an easy way to experiment with all API endpoints without writing any code. Check the `Try It` section at the end of each document page, such as [jobs/imagine](https://useapi.net/docs/api-v2/post-jobs-imagine#try-it).
 
 For your convenience, we have published all the [code](https://github.com/useapi/examples/tree/main/generate-assets) used in this article. You can choose between JavaScript and Python examples. Clone this repository locally and use it as a starting point for your experiments.
   
@@ -63,7 +63,7 @@ USEAPI_TOKEN="useapi API token" USEAPI_SERVER="Discord server" USEAPI_CHANNEL="D
 
 Execute it from the command line like this: `./example.sh` and observe the magic of the API. We have created a [YouTube video](https://youtu.be/SIiPnTJ9SHU) covering this entire process.
 
-The generated images will be saved locally. You can continue the generation process in a Discord channel to refine your desired creations, or you can use the [jobs/button](https://useapi.net/docs/api-v1/jobs-button) to automate it, following the same process as demonstrated above.
+The generated images will be saved locally. You can continue the generation process in a Discord channel to refine your desired creations, or you can use the [jobs/button](https://useapi.net/docs/api-v2/post-jobs-button) to automate it, following the same process as demonstrated above.
 
 ### Conclusion
 
