@@ -30,7 +30,7 @@ const inputFileName = './prompts.json';
 // We will utilize all three available job slots for the Basic or Standard plan.
 const maxJobs = 3;
 // Provide additional prompt params
-const withParams = ' --relax --s 750'; // --fast, --relax, --s all goes here
+const withParams = ' --relax'; // --fast, --relax, --s all goes here
 // Time to pause between Discord 429 calls
 const sleepSecs = 5;
 // API root url
