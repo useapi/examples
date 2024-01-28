@@ -1,3 +1,7 @@
 *.sh
 *.png
+*.mp4
+_*.*
 result.json
+.vscode
+node_modules
