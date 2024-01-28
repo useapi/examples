@@ -86,6 +86,8 @@ The generated images and videos will be saved locally. You may proceed with the 
 | ------------- |
 |<video src="https://useapi.net/assets/images/articles/animate-midjourney-images-with-pika-sample.mp4"> |
 
+<video src="https://useapi.net/assets/images/articles/animate-midjourney-images-with-pika-sample.mp4">
+
 ### Conclusion
 
 Visit our [Discord Server](https://discord.gg/w28uK3cnmF) for any support questions and concerns. 
