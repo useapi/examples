@@ -32,7 +32,9 @@ export class AsyncFunctionQueue {
                     break;
                 default:
                     this.queryIsFull = false;
-                    this.queue.shift();
+                    const index = this.queue.indexOf(item);
+                    if (index !== -1)
+                        this.queue.splice(index, 1);
             }
         } catch (error) {
             console.error('An error occurred:', error);

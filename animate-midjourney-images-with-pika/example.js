@@ -20,9 +20,9 @@ import prompts from './prompts.json' assert { type: 'json' };
 // console.log('process.env', process.env);
 
 /* 
-  You can configure your 
-  - Midjourney account(s) https://useapi.net/docs/api-v2/post-account-midjourney-channel 
-  - Pika accounts(s) https://useapi.net/docs/api-pika-v1/post-pika-account-channel 
+  You can ⚙️ configure your
+    👉 Midjourney account(s) https://useapi.net/docs/api-v2/post-account-midjourney-channel
+    👉 Pika accounts(s) https://useapi.net/docs/api-pika-v1/post-pika-account-channel
   Once configured params DISCORD, MJ_SERVER, MJ_CHANNEL, PIKA_CHANNEL no longer needed and can be removed.
 */
 const { USEAPI_TOKEN, DISCORD, MJ_SERVER, MJ_CHANNEL, PIKA_CHANNEL } = process.env;
