@@ -6,7 +6,7 @@ This article covers the entire process of animating images using the [Pika Disco
 
 We will explore methods to efficiently execute both tasks with minimal effort.   
 
-Please check out the [YouTube video](https://youtu.be/<>) showcasing the final results of these generations from this article.
+Please check out the [YouTube video](https://www.youtube.com/@midjourneyapi) (will be added later) showcasing the final results of these generations from this article.
 
 This article explains how to use a `webhook` to retrieve generated results and how to structure a basic query to feed requests to the API. This approach is much more performant and consumes fewer resources.
 
