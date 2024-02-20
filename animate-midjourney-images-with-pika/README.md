@@ -82,6 +82,6 @@ The generated images and videos will be saved locally. You may proceed with the 
 
 ### Conclusion
 
-Visit our [Discord Server](https://discord.gg/w28uK3cnmF) for any support questions and concerns. 
+Visit our [Discord Server](https://discord.gg/w28uK3cnmF) or [Telegram Channel](https://t.me/use_api) for any support questions and concerns. 
 
 We regularly post guides and tutorials on the [YouTube Channel](https://www.youtube.com/@midjourneyapi).
