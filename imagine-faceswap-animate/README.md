@@ -12,7 +12,7 @@ Next, we will use the [InsightFaceSwap Discord Bot](https://discord.gg/Ym3X8U59Z
 
 Finally, animation provided by the [Pika Discord Bot](https://discord.gg/pika) will be applied to the face swapped images via the experimental [Pika API](https://useapi.net/docs/api-pika-v1).
 
-Please check out the [YouTube video](https://www.youtube.com/@midjourneyapi) (to be added later) showcasing the final results of these generations from this article.
+Please check out the [YouTube video](https://www.youtube.com/watch?v=fTBi4-cG5DY) showcasing the final results of these generations from this article.
 
 This article explains how to use a `webhook` to retrieve generated results and how to structure a basic query to submit requests to the API. This approach is much more performant and consumes fewer resources.
 
