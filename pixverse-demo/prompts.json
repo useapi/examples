@@ -1,0 +1,21 @@
+[
+    {
+        "prompt": "A cinematic shot of a tiny hedgehog dressed in a complete astronaut suit, floating in the vastness of outer space. The hedgehog is repairing a small satellite with tiny tools. The Earth shines in the distance, and stars and constellations illuminate the dark cosmic background",
+        "model": "v6",
+        "duration": 5,
+        "quality": "720p"
+    },
+    {
+        "prompt": "A front view, head to toe, beautiful female model walking the runway. Emphasis is on the Great Gatsby inspired evening gown in the style of John Galliano, cinematic, realistic",
+        "model": "v6",
+        "duration": 5,
+        "quality": "720p"
+    },
+    {
+        "prompt": "smiling and blinking",
+        "model": "v6",
+        "duration": 5,
+        "quality": "720p",
+        "use_source_image": true
+    }
+]

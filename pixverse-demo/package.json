@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "name": "example",
+  "version": "1.0.0",
+  "author": "useapi.net",
+  "license": "ISC",
+  "dependencies": {
+    "@ngrok/ngrok": "^0.9.1"
+  }
+}
