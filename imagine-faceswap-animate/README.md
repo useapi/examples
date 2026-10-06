@@ -104,4 +104,4 @@ We used [Rick Astley](https://github.com/useapi/examples/blob/main/imagine-faces
 
 Visit our [Discord Server](https://discord.gg/w28uK3cnmF) or [Telegram Channel](https://t.me/use_api) for any support questions and concerns.
 
-We regularly post guides and tutorials on the [YouTube Channel](https://www.youtube.com/@midjourneyapi).
+We regularly post guides and tutorials on the [YouTube Channel](https://www.youtube.com/@useapi-net).
