@@ -4,14 +4,14 @@
 
 In this article we will show how to use the [PixVerse v2 API](https://useapi.net/docs/api-pixverse-v2) provided by [useapi.net](https://useapi.net) to generate videos. PixVerse v2 supports both **text-to-video** (t2v) and **image-to-video** (i2v) generation using the web API — no Discord bot required.
 
-Available models include `v6` and later. Videos can be generated at 5 or 8 seconds duration in `540p`, `720p`, or `1080p` quality.
+Available models include PixVerse `v6` (the default) and the third-party models PixVerse hosts, such as Seedance 2.5 and Kling 4.0. Durations and qualities depend on the model, see [Model Capabilities](https://useapi.net/docs/api-pixverse-v2/model-capabilities).
 
 ### Examples
 
-[videos/create](https://useapi.net/docs/api-pixverse-v2/post-pixverse-videos-create) (text-to-video)
+[videos/create](https://useapi.net/docs/api-pixverse-v2/post-pixverse-videos-create-v4) (text-to-video)
 > A cinematic shot of a tiny hedgehog dressed in a complete astronaut suit, floating in the vastness of outer space
 
-[videos/create](https://useapi.net/docs/api-pixverse-v2/post-pixverse-videos-create) (image-to-video)  
+[videos/create](https://useapi.net/docs/api-pixverse-v2/post-pixverse-videos-create-v4) (image-to-video)  
 Source [image](./source.jpg)
 > smiling and blinking
 
@@ -28,7 +28,7 @@ Follow these [steps](https://useapi.net/docs/start-here/setup-useapi) to get sta
 
 Configure your PixVerse account (one-time) via [POST /accounts/email](https://useapi.net/docs/api-pixverse-v2/post-pixverse-accounts-email). When no account is specified the API randomly selects an available one. Set `PIXVERSE_EMAIL` only to pin requests to a specific account.
 
-Useapi.net provides an easy way to experiment with all API endpoints without writing any code. Check the `Try It` section at the end of each document page, such as PixVerse [videos/create](https://useapi.net/docs/api-pixverse-v2/post-pixverse-videos-create#try-it) or [files](https://useapi.net/docs/api-pixverse-v2/post-pixverse-files#try-it).
+Useapi.net provides an easy way to experiment with all API endpoints without writing any code. Check the `Try It` section at the end of each document page, such as PixVerse [videos/create](https://useapi.net/docs/api-pixverse-v2/post-pixverse-videos-create-v4#try-it) or [files](https://useapi.net/docs/api-pixverse-v2/post-pixverse-files#try-it).
 
 For your convenience, we have published all the [source code](https://github.com/useapi/examples/tree/main/pixverse-demo) used in this article. You can choose between JavaScript and Python examples. Clone this repository locally and use it as a starting point for your experiments.
 
@@ -90,7 +90,7 @@ Execute it from the command line like this: `./example.sh` and observe the magic
 
 The generated videos will be saved locally. The pipeline:
 1. For each prompt entry with `use_source_image: true`: upload `./source.jpg` via [POST /files](https://useapi.net/docs/api-pixverse-v2/post-pixverse-files) → obtain `first_frame_path`.
-2. Submit [POST /videos/create](https://useapi.net/docs/api-pixverse-v2/post-pixverse-videos-create) with `prompt`, `model`, `duration`, `quality`, and optionally `first_frame_path`.
+2. Submit [POST /videos/create](https://useapi.net/docs/api-pixverse-v2/post-pixverse-videos-create-v4) with `prompt`, `model`, `duration`, `quality`, and optionally `first_frame_path`.
 3. Receive the result via ngrok webhook; download the mp4 when `video_status_final` is `true`.
 
 ### Conclusion
